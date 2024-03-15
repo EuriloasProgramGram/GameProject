@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="Style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <h1>ICE BREAKER></h1>
+    <div class="content">
+        <div class="row">
+            <div>
+                <button id="ice_clicker"> <img id = punch src="Idle.png" alt="Ice">
+                </button>
+                <img src="cube.png" alt="IceBreak" height="90px">
+                <p><span id="score">0</span></p>
+            </div>
+        </div>
+        <button id="Restart">Restart</button>
+        <p class="hidden"></p>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="upgrades">
+            <p>UPGRADES</p>
+            <div class="left">
+                <div class="amount">
+
+                </div>
+            <div class="mid">
+                <h3>Double amount<button>Cost: 10 Ice Pieces</button></h3>
+            </div>
+                <div class="right"></div>
+                level 0
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+
+
+
+
+
+
+
+let amount = 0;
+const animated = document.getElementById('punch');
+let ice_clicker = document.getElementById('ice_clicker');
+let points = document.getElementById('score')
+
+ice_clicker.addEventListener("click", function(){
+    animated.src='punch.png';
+})
+
+ice_clicker.onclick = function (){
+    amount++;
+    points.innerHTML = 'Pieces of Ice:' + amount;
+}
+</script>
+</body>
+</html>
