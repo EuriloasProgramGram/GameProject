@@ -77,5 +77,21 @@ section header{
     width: 330px;
     height: 60px;
     justify-content: space-between;
+    position: relative;
 }
-.mid-section
+#cube{
+    height: 90px;
+}
+#punch{
+    height: 90px;
+    width: 90px;
+}
+#punch:hover{
+    content: url('punch.png');
+}
+.mid h3{
+    margin: 0px;
+}
+.right p{
+    margin-bottom: 20px;
+}

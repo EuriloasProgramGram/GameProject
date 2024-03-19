@@ -13,7 +13,7 @@
             <div>
                 <button id="ice_clicker"> <img id = punch src="Idle.png" alt="Ice">
                 </button>
-                <img src="cube.png" alt="IceBreak" height="90px">
+                <img src="cube.png" alt="IceBreak" id="cube">
                 <p><span id="score">0</span></p>
             </div>
         </div>
@@ -22,17 +22,17 @@
     </div>
     <div class="content">
         <div class="row">
-            <div class="upgrades">
+            <div class="upgrades" >
             <p>UPGRADES</p>
             <div class="left">
                 <div class="amount">
 
                 </div>
             <div class="mid">
-                <h3>Double amount<button>Cost: 10 Ice Pieces</button></h3>
+                <h3>Double amount<span class="cost"><button id="upgrade">Cost: <span class="higherCost">10</span> Ice Pieces</button></span></h3>
             </div>
                 <div class="right"></div>
-                level 0
+               <p>Level <span class="levelUp">0</span></p>
             </div>
             </div>
         </div>
@@ -47,21 +47,34 @@
 
 
 
-
-
+let costLevel =document.querySelector('.higherCost')
+let level = document.querySelector('.levelUp')
 let amount = 0;
-const animated = document.getElementById('punch');
+let clickAmount = 1;
+let cost = 10;
 let ice_clicker = document.getElementById('ice_clicker');
-let points = document.getElementById('score')
+let points = document.getElementById('score');
+let upgradeButton = document.getElementById('upgrade')
 
-ice_clicker.addEventListener("click", function(){
-    animated.src='punch.png';
-})
 
 ice_clicker.onclick = function (){
-    amount++;
+    amount+= clickAmount;
     points.innerHTML = 'Pieces of Ice:' + amount;
 }
+upgradeButton.addEventListener('click', upgrade)
+
+function upgrade(){
+    if(amount>=cost) {
+        amount-=cost;
+        clickAmount *= 2;
+        points.innerHTML = 'Pieces of Ice:' + amount;
+        level.innerHTML ++
+        costLevel = costLevel * 2.32;
+        upgradeButton.textContent = "Cost: " + costLevel.innerHTML;
+    }
+}
+
+
 </script>
 </body>
 </html>
