@@ -22,18 +22,32 @@
     </div>
     <div class="content">
         <div class="row">
+            <p class="top">UPGRADES</p>
             <div class="upgrades" >
-            <p>UPGRADES</p>
+
             <div class="left">
                 <div class="amount">
 
                 </div>
             <div class="mid">
-                <h3>Double amount<span class="cost"><button id="upgrade">Cost: <span class="higherCost">10</span> Ice Pieces</button></span></h3>
+                <h3>Double<span class="cost"><button id="upgrade">Cost: <span class="higherCost">10</span> Ice Pieces</button></span></h3>
             </div>
                 <div class="right"></div>
                <p>Level <span class="levelUp">0</span></p>
             </div>
+            </div>
+            <div class="upgrades" >
+
+                <div class="left">
+                    <div class="amount2">
+
+                    </div>
+                    <div class="mid">
+                        <h3>Triple<span class="cost2"><button id="upgrade2">Cost: <span class="higherCost2">140</span> Ice Pieces</button></span></h3>
+                    </div>
+                    <div class="right"></div>
+                    <p>Level <span class="levelUp2">0</span></p>
+                </div>
             </div>
         </div>
     </div>
@@ -47,14 +61,18 @@
 
 
 
-let costLevel =document.querySelector('.higherCost')
+let costLevel = 10;
+let costLevel2 = 140;
 let level = document.querySelector('.levelUp')
+let level2 = document.querySelector('.levelUp2')
 let amount = 0;
 let clickAmount = 1;
 let cost = 10;
+let cost2 = 140;
 let ice_clicker = document.getElementById('ice_clicker');
 let points = document.getElementById('score');
 let upgradeButton = document.getElementById('upgrade')
+let upgradeButton2 = document.getElementById('upgrade2')
 
 
 ice_clicker.onclick = function (){
@@ -62,6 +80,7 @@ ice_clicker.onclick = function (){
     points.innerHTML = 'Pieces of Ice:' + amount;
 }
 upgradeButton.addEventListener('click', upgrade)
+upgradeButton2.addEventListener('click', upgrade2)
 
 function upgrade(){
     if(amount>=cost) {
@@ -69,8 +88,26 @@ function upgrade(){
         clickAmount *= 2;
         points.innerHTML = 'Pieces of Ice:' + amount;
         level.innerHTML ++
-        costLevel = costLevel * 2.32;
-        upgradeButton.textContent = "Cost: " + costLevel.innerHTML;
+        costLevel = costLevel * 2.0;
+        upgradeButton.textContent = "Cost: " + costLevel + " Ice Pieces";
+        if (costLevel>=cost){
+            cost = costLevel;
+        }
+
+    }
+}
+function upgrade2(){
+    if(amount>=cost2) {
+        amount-=cost2;
+        clickAmount *= 3;
+        points.innerHTML = 'Pieces of Ice:' + amount;
+        level2.innerHTML ++
+        costLevel2 = costLevel2 * 2.5;
+        upgradeButton.textContent = "Cost: " + costLevel2 + " Ice Pieces";
+        if (costLevel>=cost2){
+            cost2 = costLevel2;
+        }
+
     }
 }
 

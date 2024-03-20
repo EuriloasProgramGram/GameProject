@@ -57,7 +57,7 @@ section header{
 }
 
 .content{
-    box-shadow: 0 1px 3px 0 rgb(59, 41, 82), 0 1px 2px -1px rgb(255, 0, 0);
+    box-shadow: 0 1px 3px 0 rgb(59, 41, 82), 0 1px 2px -1px rgb(70, 54, 54);
     background: rgba(107, 48, 178, 0.88);
     padding: 20px;
     border-radius: 12px;
@@ -90,8 +90,12 @@ section header{
     content: url('punch.png');
 }
 .mid h3{
-    margin: 0px;
+    margin: 0;
 }
 .right p{
     margin-bottom: 20px;
+}
+.top {
+    display: flex;
+    justify-content: normal;
 }
