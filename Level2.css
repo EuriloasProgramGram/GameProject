@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("https://wallpaperswide.com/download/ice_in_caribic-wallpaper-2000x1333.jpg");
+    background-image: url("https://wallpapers.com/images/featured/snow-mountain-background-4a2xucuwaz3gzfal.jpg");
     background-repeat: no-repeat;
 }
 
@@ -58,8 +58,8 @@ section header{
 }
 
 .content{
-    box-shadow: 0 1px 3px 0 rgb(59, 41, 82), 0 1px 2px -1px rgb(70, 54, 54);
-    background: rgba(107, 48, 178, 0.88);
+    box-shadow: 0 1px 3px 0 rgb(9, 37, 66), 0 1px 2px -1px rgb(70, 54, 54);
+    background: rgb(97, 107, 133);
     padding: 20px;
     border-radius: 12px;
     width: 500px;
@@ -80,7 +80,7 @@ section header{
     justify-content: space-between;
     position: relative;
 }
-#cube{
+#snow{
     height: 90px;
 }
 #punch{
@@ -88,7 +88,7 @@ section header{
     width: 90px;
 }
 #punch:hover{
-    content: url('punch.png');
+    content: url('DallasPunch.png');
 }
 .mid h3{
     margin: 0;

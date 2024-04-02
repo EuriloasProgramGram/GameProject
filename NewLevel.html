@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="Level2.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div>
+                <button id="tree_clicker"> <img id = punch src="DallasIdle.png" alt="Ice">
+                </button>
+                <img src="Snow.png" alt="IceBreak" id="snow">
+                <p><span id="score">0</span></p>
+            </div>
+        </div>
+        <button id="Restart">Restart</button>
+        <p class="hidden"></p>
+    </div>
+    <div class="content">
+        <div class="row">
+            <p class="top">UPGRADES</p>
+            <div class="upgrades" >
+
+                <div class="left">
+                    <div class="amount">
+
+                    </div>
+                    <div class="mid">
+                        <h3>Double<span class="cost"><button id="upgrade">Cost: <span class="higherCost">0.2</span> Fragment Pieces</button></span></h3>
+                    </div>
+                    <div class="right"></div>
+                    <p>Level <span class="levelUp">0</span></p>
+                </div>
+            </div>
+            <div class="upgrades" >
+
+                <div class="left">
+                    <div class="amount2">
+
+                    </div>
+                    <div class="mid">
+                        <h3>Triple<span class="cost2"><button id="upgrade2">Cost: <span class="higherCost2">1.54</span> Fragment Pieces</button></span></h3>
+                    </div>
+                    <div class="right"></div>
+                    <p>Level <span class="levelUp2">0</span></p>
+                </div>
+                <div class="upgrades" >
+
+                    <div class="left">
+                        <div class="amount2">
+
+                        </div>
+                        <div class="mid">
+                            <h3><span class="cost3"><button id="next">Cost: 10 Fragments Pieces</button></span></h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+
+
+
+
+
+    let costLevel = 0.2;
+    let costLevel2 = 1.54;
+    let level = document.querySelector('.levelUp')
+    let level2 = document.querySelector('.levelUp2')
+    let amount = 0;
+    let clickAmount = 0.01;
+    let cost = 0.2;
+    let cost2 = 1.54;
+    let cost3 =18640;
+    let ice_clicker = document.getElementById('tree_clicker');
+    let points = document.getElementById('score');
+    let nextButton = document.getElementById('next')
+    let upgradeButton = document.getElementById('upgrade')
+    let upgradeButton2 = document.getElementById('upgrade2'), target
+
+
+    ice_clicker.onclick = function (){
+        amount+= clickAmount;
+        points.innerHTML = 'Fragments of Ice:' + amount;
+    }
+    upgradeButton.addEventListener('click', upgrade)
+    upgradeButton2.addEventListener('click', upgrade2)
+    nextButton.addEventListener('click', newLevel)
+
+    function upgrade(){
+        if(amount>=cost) {
+            amount-=cost;
+            clickAmount *= 2;
+            points.innerHTML = 'Fragments of Ice:' + amount;
+            level.innerHTML ++
+            costLevel = costLevel * 2.0;
+            upgradeButton.textContent = "Cost: " + costLevel + " Fragment Pieces";
+            if (costLevel>=cost){
+                cost = costLevel;
+            }
+
+        }
+    }
+    function upgrade2(){
+        if(amount>=cost2) {
+            amount-=cost2;
+            clickAmount *= 3;
+            points.innerHTML = 'Pieces of Ice:' + amount;
+            level2.innerHTML ++
+            costLevel2 = costLevel2 * 2.05;
+            upgradeButton2.textContent = "Cost: " + costLevel2 + " Fragment Pieces";
+            if (costLevel>=cost2){
+                cost2 = Math.round(costLevel2);
+            }
+
+        }
+    }
+    function newLevel() {
+        if(amount >= cost3){
+            window.open("Congrats.html", target="_self")
+        }
+    }
+
+</script>
+</body>
+</html>

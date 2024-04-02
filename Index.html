@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>ICE BREAKER></h1>
+    <h1>ICE BREAKER</h1>
     <div class="content">
         <div class="row">
             <div>
@@ -48,6 +48,18 @@
                     <div class="right"></div>
                     <p>Level <span class="levelUp2">0</span></p>
                 </div>
+                <div class="upgrades" >
+
+                    <div class="left">
+                        <div class="amount2">
+
+                        </div>
+                        <div class="mid">
+                            <h3>Next Level<span class="cost3"><button id="next">Cost: 18640 Ice Pieces</button></span></h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -69,10 +81,13 @@ let amount = 0;
 let clickAmount = 1;
 let cost = 10;
 let cost2 = 140;
+let cost3 =18640;
 let ice_clicker = document.getElementById('ice_clicker');
 let points = document.getElementById('score');
+let nextButton = document.getElementById('next')
 let upgradeButton = document.getElementById('upgrade')
-let upgradeButton2 = document.getElementById('upgrade2')
+let upgradeButton2 = document.getElementById('upgrade2'), target
+
 
 
 ice_clicker.onclick = function (){
@@ -81,6 +96,7 @@ ice_clicker.onclick = function (){
 }
 upgradeButton.addEventListener('click', upgrade)
 upgradeButton2.addEventListener('click', upgrade2)
+nextButton.addEventListener('click', newLevel)
 
 function upgrade(){
     if(amount>=cost) {
@@ -102,15 +118,19 @@ function upgrade2(){
         clickAmount *= 3;
         points.innerHTML = 'Pieces of Ice:' + amount;
         level2.innerHTML ++
-        costLevel2 = costLevel2 * 2.5;
-        upgradeButton.textContent = "Cost: " + costLevel2 + " Ice Pieces";
+        costLevel2 = cost2 * 3.0;
+        upgradeButton2.textContent = "Cost: " + costLevel2 + " Ice Pieces";
         if (costLevel>=cost2){
-            cost2 = costLevel2;
+            cost2 = Math.round(costLevel2);
         }
 
     }
 }
-
+function newLevel() {
+    if(amount >= cost3){
+        window.open("NewLevel.html", target="_self")
+    }
+}
 
 </script>
 </body>
