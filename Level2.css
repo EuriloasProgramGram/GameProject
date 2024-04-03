@@ -100,3 +100,7 @@ section header{
     display: flex;
     justify-content: normal;
 }
+.button h3{
+    width: 10px;
+
+}

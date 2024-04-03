@@ -17,7 +17,6 @@
                 <p><span id="score">0</span></p>
             </div>
         </div>
-        <button id="Restart">Restart</button>
         <p class="hidden"></p>
     </div>
     <div class="content">
@@ -120,7 +119,7 @@ function upgrade2(){
         level2.innerHTML ++
         costLevel2 = cost2 * 3.0;
         upgradeButton2.textContent = "Cost: " + costLevel2 + " Ice Pieces";
-        if (costLevel>=cost2){
+        if (costLevel2>=cost2){
             cost2 = Math.round(costLevel2);
         }
 

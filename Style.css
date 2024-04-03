@@ -100,3 +100,7 @@ section header{
     display: flex;
     justify-content: normal;
 }
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
