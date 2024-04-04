@@ -10,13 +10,12 @@
     <div class="content">
         <div class="row">
             <div>
-                <button id="tree_clicker"> <img id = punch src="DallasIdle.png" alt="Ice">
+                <button id="tree_clicker"> <img id = punch src="DallasIdle.png" alt="dallas">
                 </button>
-                <img src="Snow.png" alt="IceBreak" id="snow">
+                <img src="Snow.png" alt="SnowBreak" id="snow">
                 <p><span id="score">0</span></p>
             </div>
         </div>
-        <button id="Restart">Restart</button>
         <p class="hidden"></p>
     </div>
     <div class="content">
@@ -29,27 +28,28 @@
 
                     </div>
                     <div class="mid">
-                        <h3>Double<span class="cost"><button id="upgrade">Cost: <span class="higherCost">0.2</span> Fragment Pieces</button></span></h3>
+                        <h3>Double<span class="cost"><button id="upgrade">Cost: <span class="higherCost">0.2</span> Fragments</button></span></h3>
                     </div>
-                    <div class="right"></div>
                     <p>Level <span class="levelUp">0</span></p>
                 </div>
             </div>
-            <div class="upgrades">
+            <div class="upgrades" >
 
-                <div class="row">
                 <div class="left">
-                    <div class="mid">
-                        <h3>Triple<span class="cost2"><button id="upgrade2">Cost: <span class="higherCost2">1.54</span> Fragment Pieces</button></span></h3>
+                    <div class="amount2">
+
                     </div>
-                    <div class="right"></div>
+                    <div class="mid">
+                        <h3>Triple<span class="cost2"><button id="upgrade2">Cost: <span class="higherCost2">1.54</span> Fragments</button></span></h3>
+                    </div>
                     <p>Level <span class="levelUp2">0</span></p>
                 </div>
-                <div class="upgrades" >
+                <div class="upgrades">
+
+                    <div class="left">
                         <div class="mid">
-                            <h3><span class="cost3"><button id="next">Cost: 10 Fragments Pieces</button></span></h3>
+                            <h3><span class="cost3"><button id="next">Cost: 10 Fragments</button></span></h3>
                         </div>
-                        <div class="right"></div>
                     </div>
                 </div>
             </div>
@@ -57,6 +57,8 @@
     </div>
 </div>
 <script>
+
+
 
 
 
@@ -96,7 +98,7 @@
             points.innerHTML = 'Fragments of Ice:' + amount;
             level.innerHTML ++
             costLevel = costLevel * 2.0;
-            upgradeButton.textContent = "Cost: " + costLevel + " Fragment Pieces";
+            upgradeButton.textContent = "Cost: " + costLevel + " Fragments";
             if (costLevel>=cost){
                 cost = costLevel;
             }
@@ -107,10 +109,10 @@
         if(amount>=cost2) {
             amount-=cost2;
             clickAmount *= 3;
-            points.innerHTML = 'Pieces of Ice:' + amount;
+            points.innerHTML = 'Fragments of Ice' + amount;
             level2.innerHTML ++
             costLevel2 = costLevel2 * 2.05;
-            upgradeButton2.textContent = "Cost: " + costLevel2 + " Fragment Pieces";
+            upgradeButton2.textContent = "Cost: " + costLevel2 + " Fragment";
             if (costLevel>=cost2){
                 cost2 = Math.round(costLevel2);
             }
