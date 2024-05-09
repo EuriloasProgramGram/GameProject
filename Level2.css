@@ -63,6 +63,7 @@ section header{
     padding: 20px;
     border-radius: 12px;
     width: 500px;
+    border: solid #41495e 4px;
 }
 .content:hover{
     box-shadow: 0 4px 8px 0 rgba(0,0,0.2);
@@ -102,5 +103,7 @@ section header{
 }
 button{
     width: 100px;
-
+    border-radius: 6px;
+    border: none;
+    background: #3e588c;
 }
